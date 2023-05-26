@@ -5,5 +5,11 @@
   "jestrunner.debugOptions": {
     "runtimeExecutable": "/Users/salva/.nvm/versions/node/v18.16.0/bin/node"
   },
-  "cSpell.words": ["flydotio", "linebreak", "malformatted"]
+  "cSpell.words": [
+    "flydotio",
+    "linebreak",
+    "malformatted",
+    "releveler",
+    "tcaer"
+  ]
 }
