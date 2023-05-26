@@ -1,0 +1,9 @@
+{
+  "debug.javascript.defaultRuntimeExecutable": {
+    "pwa-node": "node"
+  },
+  "jestrunner.debugOptions": {
+    "runtimeExecutable": "/Users/salva/.nvm/versions/node/v18.16.0/bin/node"
+  },
+  "cSpell.words": ["flydotio", "linebreak", "malformatted"]
+}
