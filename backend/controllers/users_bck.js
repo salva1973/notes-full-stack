@@ -1,3 +1,4 @@
+const bcrypt = require('bcrypt')
 const usersRouter = require('express').Router()
 const User = require('../models/user')
 
@@ -12,20 +13,13 @@ usersRouter.get('/', async (request, response) => {
 usersRouter.post('/', async (request, response) => {
   const { username, name, password } = request.body
 
-  // const existingUser = await User.findOne({ username })
-
-  // if (existingUser) {
-  //   return response.status(409).json({ error: 'Username already exists' })
-  // }
-
-  if (!user) {
-    response.status(401).json({ error: 'token not provided' })
-  }
+  const saltRounds = 10
+  const passwordHash = await bcrypt.hash(password, saltRounds)
 
   const user = new User({
     username,
     name,
-    password,
+    passwordHash,
   })
 
   const savedUser = await user.save()
