@@ -18,10 +18,6 @@ usersRouter.post('/', async (request, response) => {
   //   return response.status(409).json({ error: 'Username already exists' })
   // }
 
-  if (!user) {
-    response.status(401).json({ error: 'token not provided' })
-  }
-
   const user = new User({
     username,
     name,
