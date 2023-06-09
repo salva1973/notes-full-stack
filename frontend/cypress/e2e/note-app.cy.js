@@ -1,8 +1,8 @@
 describe('Note app', function () {
   beforeEach(function () {
-    cy.visit('')
     // cy.request('POST', 'http://localhost:3001/api/testing/reset')
     cy.request('POST', `${Cypress.env('BACKEND')}/testing/reset`)
+    cy.visit('')
     const user = {
       name: 'Salvatore Vivolo',
       username: 'salvatore',

@@ -25,18 +25,18 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 Cypress.Commands.add('login', ({ username, password }) => {
-  cy.request('POST', 'http://localhost:3001/api/login', {
+  cy.request('POST', `${Cypress.env('BACKEND')}/login`, {
     username,
     password,
   }).then(({ body }) => {
     localStorage.setItem('loggedNoteappUser', JSON.stringify(body))
-    cy.visit('http://localhost:3000')
+    cy.visit('')
   })
 })
 
 Cypress.Commands.add('createNote', ({ content, important }) => {
   cy.request({
-    url: 'http://localhost:3001/api/notes',
+    url: `${Cypress.env('BACKEND')}/notes`,
     method: 'POST',
     body: { content, important },
     headers: {
@@ -46,5 +46,5 @@ Cypress.Commands.add('createNote', ({ content, important }) => {
     },
   })
 
-  cy.visit('http://localhost:3000')
+  cy.visit('')
 })
